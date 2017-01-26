@@ -5,9 +5,58 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound"/>
-  <sprites name="sprites"/>
-  <backgrounds name="background"/>
+  <sprites name="sprites">
+    <sprite>sprites\s7</sprite>
+    <sprite>sprites\s8</sprite>
+    <sprite>sprites\s9</sprite>
+    <sprite>sprites\sa</sprite>
+    <sprite>sprites\sb</sprite>
+    <sprite>sprites\sc</sprite>
+    <sprite>sprites\sd</sprite>
+    <sprite>sprites\se</sprite>
+    <sprite>sprites\sf</sprite>
+    <sprite>sprites\s0</sprite>
+    <sprite>sprites\s1</sprite>
+    <sprite>sprites\s2</sprite>
+    <sprite>sprites\s3</sprite>
+    <sprite>sprites\s4</sprite>
+    <sprite>sprites\s5</sprite>
+    <sprite>sprites\s6</sprite>
+    <sprite>sprites\sEMPTY</sprite>
+    <sprite>sprites\sGridBack</sprite>
+  </sprites>
+  <backgrounds name="background">
+    <background>background\bMain</background>
+  </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\sColorList.gml</script>
+  </scripts>
+  <objects name="objects">
+    <object>objects\oGrid</object>
+    <object>objects\oColorSelect</object>
+    <object>objects\o7</object>
+    <object>objects\o8</object>
+    <object>objects\o9</object>
+    <object>objects\oa</object>
+    <object>objects\ob</object>
+    <object>objects\oc</object>
+    <object>objects\od</object>
+    <object>objects\oe</object>
+    <object>objects\of</object>
+    <object>objects\o0</object>
+    <object>objects\o1</object>
+    <object>objects\o2</object>
+    <object>objects\o3</object>
+    <object>objects\o4</object>
+    <object>objects\o5</object>
+    <object>objects\o6</object>
+    <object>objects\oEMPTY</object>
+    <object>objects\oControlMain</object>
+  </objects>
+  <rooms name="rooms">
+    <room>rooms\rEdit</room>
+  </rooms>
   <help>
     <rtf>help.rtf</rtf>
   </help>

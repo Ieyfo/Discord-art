@@ -1,0 +1,17 @@
+global.color[0] = o1;
+global.color[1] = o5;
+global.color[2] = oe;
+global.color[3] = ob;
+global.color[4] = o8;
+global.color[5] = o3;
+global.color[6] = o2;
+global.color[7] = oa;
+global.color[8] = of;
+global.color[9] = o4;
+global.color[10] = o6;
+global.color[11] = o7;
+global.color[12] = o9;
+global.color[13] = oc;
+global.color[14] = od;
+global.color[15] = o0;
+global.color[16] = oEMPTY;
