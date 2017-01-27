@@ -25,13 +25,146 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>grid = ds_grid_create(17,17);
-
-for(i=0; i&lt;ds_grid_width(grid);i++){
-    for(j=0; j&lt;ds_grid_height(grid);j++){
-        instance_create(33*i+359,33*j+100, oEMPTY);
+            <string>alarm[0] = 10;
+grid = ds_grid_create(17,17);
+ds_grid_set_region(grid, 0, 0, 16, 16, 16);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Update Grid
+for(row=0; row&lt;ds_grid_width(grid);row++){
+    for(col=0; col&lt;ds_grid_height(grid);col++){
+        var place = ds_grid_get(grid,row,col);
+        var xx = 33*row+359;
+        var yy = 33*col+100;
+        meet = position_meeting(xx,yy, global.color[0] || global.color[1] || global.color[2] || global.color[3] || global.color[4] || global.color[5] || global.color[6] || global.color[7] || global.color[8] || global.color[9] || global.color[10] || global.color[11] || global.color[12] || global.color[13] || global.color[14] || global.color[15] || global.color[16])
+                       
+        switch(place){
+            case 0:
+                with(meet){
+                    instance_destroy();
+                }
+                instance_create(33*row+359,33*col+100,global.color[0]);
+            break;
+            case 1:
+                with(meet){
+                    instance_destroy();
+                }
+                instance_create(33*row+359,33*col+100,global.color[1]);
+            break;
+            case 2:
+                with(meet){
+                    instance_destroy();
+                }
+                instance_create(33*row+359,33*col+100,global.color[2]);
+            break;
+            case 3:
+                with(meet){
+                    instance_destroy();
+                }
+                instance_create(33*row+359,33*col+100,global.color[3]);
+            break;
+            case 4:
+                with(meet){
+                    instance_destroy();
+                }
+                instance_create(33*row+359,33*col+100,global.color[4]);
+            break;
+            case 5:
+                with(meet){
+                    instance_destroy();
+                }
+                instance_create(33*row+359,33*col+100,global.color[5]);
+            break;
+            case 6:
+                with(meet){
+                    instance_destroy();
+                }
+                instance_create(33*row+359,33*col+100,global.color[6]);
+            break;
+            case 7:
+                with(meet){
+                    instance_destroy();
+                }
+                instance_create(33*row+359,33*col+100,global.color[7]);
+            break;
+            case 8:
+                with(meet){
+                    instance_destroy();
+                }
+                instance_create(33*row+359,33*col+100,global.color[8]);
+            break;
+            case 9:
+                with(meet){
+                    instance_destroy();
+                }
+                instance_create(33*row+359,33*col+100,global.color[9]);
+            break;
+            case 10:
+                with(meet){
+                    instance_destroy();
+                }
+                instance_create(33*row+359,33*col+100,global.color[10]);
+            break;
+            case 11:
+                with(meet){
+                    instance_destroy();
+                }
+                instance_create(33*row+359,33*col+100,global.color[11]);
+            break;
+            case 12:
+                with(meet){
+                    instance_destroy();
+                }
+                instance_create(33*row+359,33*col+100,global.color[12]);
+            break;
+            case 13:
+                with(meet){
+                    instance_destroy();
+                }
+                instance_create(33*row+359,33*col+100,global.color[13]);
+            break;
+            case 14:
+                with(meet){
+                    instance_destroy();
+                }
+                instance_create(33*row+359,33*col+100,global.color[14]);
+            break;
+            case 15:
+                with(meet){
+                    instance_destroy();
+                }
+                instance_create(33*row+359,33*col+100,global.color[15]);
+            break;
+            case 16:
+                with(meet){
+                    instance_destroy();
+                }
+                instance_create(33*row+359,33*col+100,global.color[16]);
+            break;
+        }
     }
 }
+alarm[0] = room_speed/6;
 </string>
           </argument>
         </arguments>

@@ -29,7 +29,7 @@
 
 for(i=0; i&lt;ds_grid_width(gridSelect);i++){
     instance_create(36*i+332, 50, global.color[i]);
-    ds_grid_set(gridSelect,i,1,i);
+    ds_grid_set(gridSelect,i,0,i);
 }
 </string>
           </argument>

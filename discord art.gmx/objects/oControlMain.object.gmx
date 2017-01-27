@@ -52,16 +52,25 @@ instance_create(0,0,oColorSelect);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(mouse_check_button_pressed(mb_left)){
-    var xx = mouse_x;
-    var yy = mouse_y;
-    global.selected = ds_grid_get(oColorSelect.gridSelect,mouse_x,mouse_y);
+            <string>var _colX= (mouse_x-332) div 36;//x calculation
+var _colY= (mouse_y-50) div 32;//y calculation
+
+var _editX= (mouse_x-359) div 33;//x calculation
+var _editY= (mouse_y-100) div 33;//y calculation
+
+// Check if mouse is within the color select.
+if(point_in_rectangle(mouse_x, mouse_y, 330, 50, 946, 82)){
+    if(mouse_check_button_pressed(mb_left)){
+        global.selected = ds_grid_get(oColorSelect.gridSelect,_colX,_colY);
+    }
 }
 
-if(mouse_check_button_pressed(mb_left)){
-    ds_grid_add(oGrid.grid,mouse_x,mouse_y, global.selected);
+// Check if mouse is within the edit area.
+if(point_in_rectangle(mouse_x, mouse_y, 358, 100, 920, 665)){
+    if(mouse_check_button_pressed(mb_left)){
+        ds_grid_set(oGrid.grid,_editX,_editY, global.selected);
+    }
 }
-
 </string>
           </argument>
         </arguments>
@@ -84,7 +93,27 @@ if(mouse_check_button_pressed(mb_left)){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_text(15,15, global.selected);
+            <string>var _x= (mouse_x-332) div 36;//x calculation
+var _y= (mouse_y-50) div 32;//y calculation
+
+var _editX= (mouse_x-359) div 33;//x calculation
+var _editY= (mouse_y-100) div 33;//y calculation
+
+draw_set_halign(fa_center);
+draw_set_color(c_red);
+
+
+if(point_in_rectangle(mouse_x, mouse_y, 330, 50, 946, 82)){
+    // Check if mouse is within the color select.
+    draw_text(mouse_x,mouse_y-7,string(_x)+","+string(_y));
+}else if(point_in_rectangle(mouse_x, mouse_y, 358, 100, 920, 665)){
+    // Check if mouse is within the edit area.
+    draw_text(mouse_x,mouse_y-7,string(_editX)+","+string(_editY));
+}
+
+draw_set_halign(fa_left);
+draw_text(15,15, global.selected);
+draw_text(15,30, instance_count);
 draw_sprite(sGridBack,0,328,46);
 </string>
           </argument>
