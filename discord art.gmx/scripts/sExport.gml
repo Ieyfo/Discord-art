@@ -2,9 +2,9 @@ if(file_exists("export.txt")){file_delete("export.txt")}
 var export = file_text_open_write("export.txt");
 show_debug_message("File:Opened");
 var i,j;
-for(i=0;i<ds_grid_height(oGrid.grid);i++){
-    for(j=0;j<ds_grid_width(oGrid.grid);j++){
-        if(j==17){
+for(i=0;i<ds_grid_width(oGrid.grid);i++){
+    for(j=0;j<ds_grid_height(oGrid.grid);j++){
+        if(i==16){
             file_text_writeln(export);
         }else if(position_meeting(33*i+359,33*j+100,o7)){
             file_text_write_string(export, ":7_:");
