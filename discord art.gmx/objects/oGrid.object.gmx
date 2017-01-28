@@ -27,7 +27,6 @@
             <kind>1</kind>
             <string>alarm[0] = 10;
 grid = ds_grid_create(17,17);
-ds_grid_set_region(grid, 0, 0, 16, 16, 16);
 </string>
           </argument>
         </arguments>

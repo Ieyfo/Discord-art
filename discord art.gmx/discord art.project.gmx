@@ -37,6 +37,7 @@
   <scripts name="scripts">
     <script>scripts\sColorList.gml</script>
     <script>scripts\sSetUse.gml</script>
+    <script>scripts\sExport.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fButton</font>
