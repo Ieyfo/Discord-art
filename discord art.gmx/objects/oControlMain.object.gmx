@@ -80,7 +80,7 @@ if(point_in_rectangle(mouse_x, mouse_y, 330, 50, 946, 82)){
 }
 
 // Check if mouse is within the edit area.
-if(point_in_rectangle(mouse_x, mouse_y, 358, 100, 920, 665)){
+if(point_in_rectangle(mouse_x, mouse_y, 360, 100, 920, 659)){
     // Snap mouse to 32x32 grid while in edit area.
     with(oCursor){
         x = (mouse_x div 33) * 33;
