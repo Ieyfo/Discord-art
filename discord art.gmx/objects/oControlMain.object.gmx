@@ -26,10 +26,14 @@
           <argument>
             <kind>1</kind>
             <string>/// Main Game Init
-global.selected = 0;
 sColorList();
+global.debug = false;
+global.selected = 0;
+global.inUse = global.color[16];
 instance_create(0,0,oGrid);
 instance_create(0,0,oColorSelect);
+instance_create(0,0,oCursor);
+instance_create(1131,304,oExport);
 </string>
           </argument>
         </arguments>
@@ -58,17 +62,48 @@ var _colY= (mouse_y-50) div 32;//y calculation
 var _editX= (mouse_x-359) div 33;//x calculation
 var _editY= (mouse_y-100) div 33;//y calculation
 
+// Enable/Disable dubugging.
+if(keyboard_check_pressed(ord('D'))){
+    if(global.debug == true){
+        global.debug = false;
+    }else{
+        global.debug = true;
+    }
+}
+
 // Check if mouse is within the color select.
 if(point_in_rectangle(mouse_x, mouse_y, 330, 50, 946, 82)){
-    if(mouse_check_button_pressed(mb_left)){
+    if(mouse_check_button(mb_left)){
         global.selected = ds_grid_get(oColorSelect.gridSelect,_colX,_colY);
+        sSetUse(global.selected);
     }
 }
 
 // Check if mouse is within the edit area.
 if(point_in_rectangle(mouse_x, mouse_y, 358, 100, 920, 665)){
-    if(mouse_check_button_pressed(mb_left)){
-        ds_grid_set(oGrid.grid,_editX,_editY, global.selected);
+    // Snap mouse to 32x32 grid while in edit area.
+    with(oCursor){
+        x = (mouse_x div 33) * 33;
+        y = (mouse_y div 33) * 33;
+    }
+    
+    // Adding a color to the edit area.
+    if(mouse_check_button(mb_left) &amp;&amp; !position_meeting(mouse_x, mouse_y, oColor)){
+        show_debug_message("Instance_created.")
+        var obj = instance_create(oCursor.x, oCursor.y, global.inUse);
+        with(obj){
+            move_snap(33,33);
+            x-=4;
+            y+=1;
+        }
+    }
+    
+    // Removing a color from the edit area.
+    if(mouse_check_button(mb_right)){
+        var obj = collision_point(mouse_x, mouse_y, oColor, false, true);
+        with(obj){
+            instance_destroy();
+        }
     }
 }
 </string>
@@ -99,22 +134,32 @@ var _y= (mouse_y-50) div 32;//y calculation
 var _editX= (mouse_x-359) div 33;//x calculation
 var _editY= (mouse_y-100) div 33;//y calculation
 
+draw_sprite(sGridBack,0,328,46);
+draw_sprite(sRaspberry,0,165,353);
+
 draw_set_halign(fa_center);
 draw_set_color(c_red);
 
+if(global.debug == true){
+    if(point_in_rectangle(mouse_x, mouse_y, 330, 50, 946, 82)){
+        // Check if mouse is within the color select.
+        draw_text(mouse_x,mouse_y-7,string(_x)+","+string(_y));
+    }else if(point_in_rectangle(mouse_x, mouse_y, 358, 100, 920, 665)){
+        // Check if mouse is within the edit area.
+        draw_text(mouse_x,mouse_y-7,string(_editX)+","+string(_editY));
+    }else{
+        // Anywhere else.
+        draw_text(mouse_x,mouse_y-7,string(mouse_x)+","+string(mouse_y));
+    }
 
-if(point_in_rectangle(mouse_x, mouse_y, 330, 50, 946, 82)){
-    // Check if mouse is within the color select.
-    draw_text(mouse_x,mouse_y-7,string(_x)+","+string(_y));
-}else if(point_in_rectangle(mouse_x, mouse_y, 358, 100, 920, 665)){
-    // Check if mouse is within the edit area.
-    draw_text(mouse_x,mouse_y-7,string(_editX)+","+string(_editY));
+
+    draw_set_halign(fa_left);
+    draw_text(15,15, global.selected);
+    draw_text(15,30, instance_count);
+    draw_text(15,45, fps);
+    draw_text(15,60, fps_real);
+    draw_set_color(c_black);
 }
-
-draw_set_halign(fa_left);
-draw_text(15,15, global.selected);
-draw_text(15,30, instance_count);
-draw_sprite(sGridBack,0,328,46);
 </string>
           </argument>
         </arguments>

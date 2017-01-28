@@ -6,8 +6,6 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\sEMPTY</sprite>
-    <sprite>sprites\sGridBack</sprite>
     <sprites name="Colors">
       <sprite>sprites\s7</sprite>
       <sprite>sprites\s8</sprite>
@@ -26,6 +24,11 @@
       <sprite>sprites\s4</sprite>
       <sprite>sprites\s6</sprite>
     </sprites>
+    <sprite>sprites\sEMPTY</sprite>
+    <sprite>sprites\sGridBack</sprite>
+    <sprite>sprites\sCur</sprite>
+    <sprite>sprites\sRaspberry</sprite>
+    <sprite>sprites\sButton</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bMain</background>
@@ -33,12 +36,12 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\sColorList.gml</script>
+    <script>scripts\sSetUse.gml</script>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\fButton</font>
+  </fonts>
   <objects name="objects">
-    <object>objects\oGrid</object>
-    <object>objects\oColorSelect</object>
-    <object>objects\oEMPTY</object>
-    <object>objects\oControlMain</object>
     <objects name="Colors">
       <object>objects\o7</object>
       <object>objects\o8</object>
@@ -56,7 +59,14 @@
       <object>objects\o4</object>
       <object>objects\o5</object>
       <object>objects\o6</object>
+      <object>objects\oColor</object>
     </objects>
+    <object>objects\oControlMain</object>
+    <object>objects\oGrid</object>
+    <object>objects\oColorSelect</object>
+    <object>objects\oEMPTY</object>
+    <object>objects\oCursor</object>
+    <object>objects\oExport</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rEdit</room>
