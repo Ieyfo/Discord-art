@@ -34,6 +34,7 @@ instance_create(0,0,oGrid);
 instance_create(0,0,oColorSelect);
 instance_create(0,0,oCursor);
 instance_create(1131,304,oExport);
+//instance_create(1131,384,oImport);
 </string>
           </argument>
         </arguments>

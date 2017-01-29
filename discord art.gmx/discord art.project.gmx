@@ -38,6 +38,7 @@
     <script>scripts\sColorList.gml</script>
     <script>scripts\sSetUse.gml</script>
     <script>scripts\sExport.gml</script>
+    <script>scripts\sImport.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fButton</font>
@@ -68,6 +69,7 @@
     <object>objects\oEMPTY</object>
     <object>objects\oCursor</object>
     <object>objects\oExport</object>
+    <object>objects\oImport</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rEdit</room>

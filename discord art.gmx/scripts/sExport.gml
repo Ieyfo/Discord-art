@@ -1,7 +1,7 @@
 if(file_exists("export.txt")){file_delete("export.txt")}
 var export = file_text_open_write("export.txt");
 show_debug_message("File:Opened");
-var i,j;
+var i;
 // Row 1
 for(i=0;i<ds_grid_width(oGrid.grid);i++){
     if(position_meeting(33*i+359,100,o7)){
@@ -37,7 +37,7 @@ for(i=0;i<ds_grid_width(oGrid.grid);i++){
     }else if(position_meeting(33*i+359,100,o6)){
         file_text_write_string(export, ":6_:");
     }else if(position_empty(33*i+359,100,)){
-        file_text_write_string(export, "           ");
+        file_text_write_string(export, ":w_:");
     }       
 }
 file_text_writeln(export);
@@ -76,7 +76,7 @@ for(i=0;i<ds_grid_width(oGrid.grid);i++){
     }else if(position_meeting(33*i+359,133,o6)){
         file_text_write_string(export, ":6_:");
     }else if(position_empty(33*i+359,133)){
-        file_text_write_string(export, "           ");
+        file_text_write_string(export, ":w_:");
     }       
 }
 file_text_writeln(export);
@@ -115,7 +115,7 @@ for(i=0;i<ds_grid_width(oGrid.grid);i++){
     }else if(position_meeting(33*i+359,166,o6)){
         file_text_write_string(export, ":6_:");
     }else if(position_empty(33*i+359,166)){
-        file_text_write_string(export, "           ");
+        file_text_write_string(export, ":w_:");
     }       
 }
 file_text_writeln(export);
@@ -154,7 +154,7 @@ for(i=0;i<ds_grid_width(oGrid.grid);i++){
     }else if(position_meeting(33*i+359,199,o6)){
         file_text_write_string(export, ":6_:");
     }else if(position_empty(33*i+359,199)){
-        file_text_write_string(export, "           ");
+        file_text_write_string(export, ":w_:");
     }       
 }
 file_text_writeln(export);
@@ -193,7 +193,7 @@ for(i=0;i<ds_grid_width(oGrid.grid);i++){
     }else if(position_meeting(33*i+359,232,o6)){
         file_text_write_string(export, ":6_:");
     }else if(position_empty(33*i+359,232)){
-        file_text_write_string(export, "           ");
+        file_text_write_string(export, ":w_:");
     }       
 }
 file_text_writeln(export);
@@ -232,7 +232,7 @@ for(i=0;i<ds_grid_width(oGrid.grid);i++){
     }else if(position_meeting(33*i+359,265,o6)){
         file_text_write_string(export, ":6_:");
     }else if(position_empty(33*i+359,265)){
-        file_text_write_string(export, "           ");
+        file_text_write_string(export, ":w_:");
     }       
 }
 file_text_writeln(export);
@@ -271,7 +271,7 @@ for(i=0;i<ds_grid_width(oGrid.grid);i++){
     }else if(position_meeting(33*i+359,298,o6)){
         file_text_write_string(export, ":6_:");
     }else if(position_empty(33*i+359,298)){
-        file_text_write_string(export, "           ");
+        file_text_write_string(export, ":w_:");
     }       
 }
 file_text_writeln(export);
@@ -310,7 +310,7 @@ for(i=0;i<ds_grid_width(oGrid.grid);i++){
     }else if(position_meeting(33*i+359,331,o6)){
         file_text_write_string(export, ":6_:");
     }else if(position_empty(33*i+359,331)){
-        file_text_write_string(export, "           ");
+        file_text_write_string(export, ":w_:");
     }       
 }
 file_text_writeln(export);
@@ -349,7 +349,7 @@ for(i=0;i<ds_grid_width(oGrid.grid);i++){
     }else if(position_meeting(33*i+359,364,o6)){
         file_text_write_string(export, ":6_:");
     }else if(position_empty(33*i+359,364)){
-        file_text_write_string(export, "           ");
+        file_text_write_string(export, ":w_:");
     }       
 }
 file_text_writeln(export);
@@ -388,7 +388,7 @@ for(i=0;i<ds_grid_width(oGrid.grid);i++){
     }else if(position_meeting(33*i+359,397,o6)){
         file_text_write_string(export, ":6_:");
     }else if(position_empty(33*i+359,397)){
-        file_text_write_string(export, "           ");
+        file_text_write_string(export, ":w_:");
     }       
 }
 file_text_writeln(export);
@@ -427,7 +427,7 @@ for(i=0;i<ds_grid_width(oGrid.grid);i++){
     }else if(position_meeting(33*i+359,430,o6)){
         file_text_write_string(export, ":6_:");
     }else if(position_empty(33*i+359,430)){
-        file_text_write_string(export, "           ");
+        file_text_write_string(export, ":w_:");
     }       
 }
 file_text_writeln(export);
@@ -466,7 +466,7 @@ for(i=0;i<ds_grid_width(oGrid.grid);i++){
     }else if(position_meeting(33*i+359,463,o6)){
         file_text_write_string(export, ":6_:");
     }else if(position_empty(33*i+359,463)){
-        file_text_write_string(export, "           ");
+        file_text_write_string(export, ":w_:");
     }       
 }
 file_text_writeln(export);
@@ -505,7 +505,7 @@ for(i=0;i<ds_grid_width(oGrid.grid);i++){
     }else if(position_meeting(33*i+359,496,o6)){
         file_text_write_string(export, ":6_:");
     }else if(position_empty(33*i+359,496)){
-        file_text_write_string(export, "           ");
+        file_text_write_string(export, ":w_:");
     }       
 }
 file_text_writeln(export);
@@ -544,7 +544,7 @@ for(i=0;i<ds_grid_width(oGrid.grid);i++){
     }else if(position_meeting(33*i+359,529,o6)){
         file_text_write_string(export, ":6_:");
     }else if(position_empty(33*i+359,529)){
-        file_text_write_string(export, "           ");
+        file_text_write_string(export, ":w_:");
     }       
 }
 file_text_writeln(export);
@@ -583,7 +583,7 @@ for(i=0;i<ds_grid_width(oGrid.grid);i++){
     }else if(position_meeting(33*i+359,562,o6)){
         file_text_write_string(export, ":6_:");
     }else if(position_empty(33*i+359,562)){
-        file_text_write_string(export, "           ");
+        file_text_write_string(export, ":w_:");
     }       
 }
 file_text_writeln(export);
@@ -622,7 +622,7 @@ for(i=0;i<ds_grid_width(oGrid.grid);i++){
     }else if(position_meeting(33*i+359,595,o6)){
         file_text_write_string(export, ":6_:");
     }else if(position_empty(33*i+359,595)){
-        file_text_write_string(export, "           ");
+        file_text_write_string(export, ":w_:");
     }       
 }
 file_text_writeln(export);
@@ -661,7 +661,7 @@ for(i=0;i<ds_grid_width(oGrid.grid);i++){
     }else if(position_meeting(33*i+359,628,o6)){
         file_text_write_string(export, ":6_:");
     }else if(position_empty(33*i+359,628)){
-        file_text_write_string(export, "           ");
+        file_text_write_string(export, ":w_:");
     }       
 }
 file_text_close(export);
