@@ -1,0 +1,16 @@
+global.color[0] = make_colour_rgb(0,0,0); // black
+global.color[1] = make_colour_rgb(157,157,157); // Grey
+global.color[2] = make_colour_rgb(255,255,255); // White
+global.color[3] = make_colour_rgb(70,60,43); // Dark Brown 
+global.color[4] = make_colour_rgb(164,100,34); // Light Brown
+global.color[5] = make_colour_rgb(247,226,107); // Tan
+global.color[6] = make_colour_rgb(235,137,49); // Orange
+global.color[7] = make_colour_rgb(190,38,51); // Red
+global.color[8] = make_colour_rgb(224,111,139); // Pink
+global.color[9] = make_colour_rgb(163,206,39); // Light Green
+global.color[10] = make_colour_rgb(68,137,26); // Green
+global.color[11] = make_colour_rgb(36,85,48); // Dark Green
+global.color[12] = make_colour_rgb(27,38,50); // Dark Blue
+global.color[13] = make_colour_rgb(0,87,132); // Blue
+global.color[14] = make_colour_rgb(49,162,242); // Light Blue
+global.color[15] = make_colour_rgb(178,220,239); // Baby Blue
