@@ -27,7 +27,6 @@
     <font>fonts\fUI</font>
   </fonts>
   <objects name="objects">
-    <object>objects\oEditArea</object>
     <object>objects\oMain</object>
     <object>objects\oControlGUI</object>
   </objects>

@@ -28,6 +28,7 @@
             <string>mainSurface = noone;
 colSelectSurface = noone;
 framesSurface = noone;
+editSurface = noone;
 colSelectOpen = false;
 </string>
           </argument>
@@ -89,8 +90,9 @@ if(surface_exists(mainSurface)){
     draw_rectangle_colour(0,0,1280,39,global.bgCol2, global.bgCol2, global.bgCol2, global.bgCol2, false);
     draw_sprite(sUIList,0, 2, 2);
     draw_sprite(sUINewGrid,0, 38, 2);
-    draw_sprite(sUIImport,0, 73, 2);
-    draw_sprite(sUIExport,0, 108, 2);
+    draw_sprite(sUIImport,0, 74, 2);
+    draw_sprite(sUIExport,0, 109, 2);
+    draw_sprite(sPlus, 0, 145, 2);
     draw_sprite(sUISettings,0, 1175, 2);
     draw_sprite(sUIInfo,0, 1210, 2);
     draw_sprite(sUIExit,0, 1245, 2);
@@ -124,10 +126,6 @@ if(surface_exists(mainSurface)){
         draw_rectangle_color(0,0,1280,4,c_black,c_black,c_black,c_black,false);
         draw_set_alpha(1);
         draw_rectangle_color(0,3,1280,218,global.bgCol2,global.bgCol2,global.bgCol2,global.bgCol2,false);
-        draw_set_alpha(0.7);
-        draw_rectangle_color(623,25,660,62,c_black,c_black,c_black,c_black,false);
-        draw_set_alpha(1);
-        draw_sprite(sPlus, 0, 625, 27);
         draw_set_colour(c_white);
         draw_set_halign(fa_center);
         draw_set_valign(fa_center);
@@ -138,9 +136,6 @@ if(surface_exists(mainSurface)){
         draw_set_halign(fa_left);
         draw_set_valign(fa_left);
         
-        if(mouse_check_button_pressed(mb_left) &amp;&amp; point_in_rectangle(mouse_x, mouse_y, 623,25,660,62)){
-            show_debug_message("Clicked UI Element: New Frame");
-        }
         surface_reset_target();
         draw_surface(framesSurface, 0, 502);
     }else{
@@ -191,16 +186,19 @@ if(surface_exists(colSelectSurface)){
 
 // Clicking New Grid button.
 if(mouse_check_button_pressed(mb_left) &amp;&amp; point_in_rectangle(mouse_x, mouse_y,38,2,73,37)){
-    //global.editCellWidth = get_string("Input Width", 10);
-    //global.editCellHeight = get_string("Input Height", 8);
     show_debug_message("Clicked UI Element: New Grid");
 }
 
-// Import/Export Buttons
-if(mouse_check_button_pressed(mb_left) &amp;&amp; point_in_rectangle(mouse_x, mouse_y,74,2,109,37)){
+// Import/Export Buttons.
+if(mouse_check_button_pressed(mb_left) &amp;&amp; point_in_rectangle(mouse_x, mouse_y,74,2,108,37)){
     show_debug_message("Clicked UI Element: Import");
-}else if(mouse_check_button_pressed(mb_left) &amp;&amp; point_in_rectangle(mouse_x, mouse_y,110,2,144,37)){
+}else if(mouse_check_button_pressed(mb_left) &amp;&amp; point_in_rectangle(mouse_x, mouse_y,109,2,144,37)){
     show_debug_message("Clicked UI Element: Export");
+}
+
+// New Frame.
+if(mouse_check_button_pressed(mb_left) &amp;&amp; point_in_rectangle(mouse_x, mouse_y, 145, 2, 179, 37)){
+    show_debug_message("Clicked UI Element: Add Frame");
 }
 </string>
           </argument>
